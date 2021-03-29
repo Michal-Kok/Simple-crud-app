@@ -1,0 +1,11 @@
+@import './_variables.scss';
+
+.mainTemplate {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr;
+    background-color: $darkColor;
+}

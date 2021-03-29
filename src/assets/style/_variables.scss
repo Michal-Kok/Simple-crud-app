@@ -1,0 +1,63 @@
+$white: #FFF;
+$lightGrey: #b3b3b3;
+$darkGrey: #535353;
+$darkColor: #212121;
+$black: #121212;
+$green: #1db954;
+
+@mixin button {
+    padding: 10px 20px;
+    border: 3px solid white;
+}
+
+// media queries most commor values
+
+$small-phone-width: 380px;
+$bigger-phone-width: 600px;
+$small-tablet-width: 768px;
+$bigger-tablet-width: 1024px;
+$small-desktop-width: 1350px;
+
+// function for faster "media-quering" ;)
+
+@mixin breakpoint($type) {
+    @if $type==small_phone {
+        @media screen and (min-width: #{$small-phone-width}) {
+            @content;
+        }
+    }
+
+    @else if $type==phone_portrait {
+        @media only screen and (min-width: #{$bigger-phone-width}) and (orientation: landscape) {
+            @content;
+        }
+    }
+
+    @else if $type==small_tablet {
+        @media only screen and (min-width: #{$small-tablet-width}) and (min-height: 420px
+
+            /*#{$small-phone-width}*/
+        ) {
+            @content;
+        }
+    }
+
+    @else if $type==bigger_tablet {
+        @media only screen and (min-width: #{$bigger-tablet-width}) {
+            @content;
+        }
+    }
+
+    @else if $type==tablet_portrait {
+        @media only screen and (min-height: #{$bigger-phone-width}) and (min-width: #{$bigger-tablet-width}) {
+            @content;
+        }
+    }
+
+    @else if $type==small_desktop {
+        @media only screen and (min-width: #{$small-desktop-width}) {
+            @content;
+        }
+    }
+
+}
