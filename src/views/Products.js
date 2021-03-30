@@ -22,18 +22,28 @@ const Products = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let isExist = false;
 
+        products.forEach(product => {
+            if (product.id === inputValue) {
+                setError("it's already exist!");
+                isExist = !isExist;
+            }
+        })
         if (inputValue === '') {
             setError("Oh no. You can't sell nothing!");
             return;
         }
-        db.collection("products").doc(inputValue).set(defaultCampaignData)
+        !isExist && db.collection("products").doc(inputValue).set(defaultCampaignData)
             .then(() => {
                 console.log("Document successfully written!");
+                setError('');
+                setInputValue('');
             })
             .catch((error) => {
                 setError(error);
             });
+
     }
 
     useEffect(() => {

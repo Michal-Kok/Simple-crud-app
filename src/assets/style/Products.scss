@@ -30,7 +30,6 @@
             background-color: $darkColor;
         }
 
-
         &__button {
             @include button(3px, 20px);
             margin-left: 10px;

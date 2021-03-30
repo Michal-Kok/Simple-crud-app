@@ -7,11 +7,8 @@ const Dashboard = () => {
         <div className="dashboard">
             <header className="dashboard__header">
                 <h1 className="dashboard__header__title">
-                    Show your products.
+                    Sell your products better.
                 </h1>
-                <p className="dashboard__header__text">Better.</p>
-                <p className="dashboard__header__text">Faster.</p>
-                <p className="dashboard__header__text">Clearer.</p>
             </header>
         </div>
     )

@@ -14,5 +14,10 @@
         list-style: none;
         color: $lightGrey;
         font-weight: bold;
+
+        a {
+            text-decoration: none;
+            color: $lightGrey;
+        }
     }
 }
