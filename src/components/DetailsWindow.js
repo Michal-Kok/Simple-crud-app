@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import '../assets/style/DetailsWindow.scss';
+import useForm from '../helpers/useForm';
 
-const DetailsWindow = ({ details: { cmp_name, bid_amount, cmp_fund, keywords, radius, status, town }, closeWindow }) => {
+const DetailsWindow = ({ details, closeWindow }) => {
 
+    const { cmp_name, bid_amount, cmp_fund, keywords, radius, status, town, key } = details;
     const [isEditing, setIsEditing] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsEditing(false);
-    }
+    const [values, handleInputChange, handleSubmit, errors] = useForm(setIsEditing, details);
 
     return (
         <>
@@ -22,34 +20,47 @@ const DetailsWindow = ({ details: { cmp_name, bid_amount, cmp_fund, keywords, ra
                             </h2>
                             <form onSubmit={handleSubmit} className="detailsWindow__form">
                                 <input
-                                    id="name"
-                                    name="name"
+                                    id="cmp_name"
+                                    name="cmp_name"
                                     type="text"
-                                    placeholder="Campaign name..." />
+                                    placeholder="Campaign name..."
+                                    onChange={handleInputChange}
+                                    value={values.cmp_name} />
                                 <input
                                     id="keywords"
                                     name="keywords"
                                     type="text"
-                                    placeholder="Keywords..." />
+                                    placeholder="Keywords..."
+                                    onChange={handleInputChange}
+                                    value={values.keywords} />
                                 <input
-                                    id="bid"
-                                    name="bid"
-                                    type="text"
-                                    placeholder="Bid amount..." />
+                                    id="bid_amount"
+                                    name="bid_amount"
+                                    type="number"
+                                    placeholder="Bid amount..."
+                                    onChange={handleInputChange}
+                                    value={values.bid_amount} />
                                 <input
-                                    id="fund"
-                                    name="fund"
+                                    id="cmp_fund"
+                                    name="cmp_fund"
                                     type="text"
-                                    placeholder="Campaign fund..." />
+                                    placeholder="Campaign fund..."
+                                    onChange={handleInputChange}
+                                    value={values.cmp_fund} />
                                 <label className="detailsWindow__form__statusLabel" htmlFor="status">
                                     Choose status:
                                 <input
                                         id="status"
                                         name="status"
-                                        type="checkbox" />
+                                        type="checkbox"
+                                        onChange={handleInputChange}
+                                        checked={values.status} />
                                 </label>
                                 <label htmlFor="town">
-                                    <select name="town" id="town">
+                                    <select
+                                        name="town" id="town"
+                                        onChange={handleInputChange}
+                                        value={values.town} >
                                         <option value="town">Select town</option>
                                         <option value="cracow">Crocow</option>
                                         <option value="warsaw">Warsaw</option>
@@ -61,10 +72,15 @@ const DetailsWindow = ({ details: { cmp_name, bid_amount, cmp_fund, keywords, ra
                                     id="radius"
                                     name="radius"
                                     type="number"
-                                    placeholder="Radius (KM)..." />
+                                    placeholder="Radius (KM)..."
+                                    onChange={handleInputChange}
+                                    value={values.radius} />
                                 <button className="detailsWindow__button">
                                     Save
                             </button>
+                                {errors
+                                    ? <p className="detailsWindow__form__error">{errors}</p>
+                                    : null}
                             </form>
                         </>
                     )

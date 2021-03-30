@@ -42,6 +42,7 @@
         font-size: 18px;
         @include button(10px, 25px);
         margin-top: 40px;
+        width: 100%;
     }
 
     &__form {
@@ -72,6 +73,12 @@
             input {
                 margin-left: 15px;
             }
+        }
+
+        &__error {
+            font-size: 12px;
+            margin-top: 30px;
+            color: red;
         }
     }
 

@@ -8,6 +8,42 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
+    }
 
+    &__form {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+
+        &__input {
+            background-color: transparent;
+            padding: 18px 5px 5px 5px;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid $white;
+            color: $lightGrey;
+            font-weight: bold;
+            outline: none;
+        }
+
+        &__input:focus {
+            background-color: $darkColor;
+        }
+
+
+        &__button {
+            @include button(3px, 20px);
+            margin-left: 10px;
+        }
+    }
+
+    &__button {
+        @include button(10px, 15px);
+        margin: 20px auto;
+    }
+
+    &__error {
+        color: red;
+        font-size: 14px;
     }
 }

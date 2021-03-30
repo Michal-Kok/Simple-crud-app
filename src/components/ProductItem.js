@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/style/ProductsItem.scss';
+import db from '../firebase';
 import DetailsWindow from './DetailsWindow';
 
 const ProductItem = ({ name, product: details }) => {
@@ -7,7 +8,12 @@ const ProductItem = ({ name, product: details }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     const handleDeleteProduct = () => {
-        console.log('usuwamy');
+        db.collection("products").doc(details.id).delete()
+            .then(() => {
+                console.log("Document successfully deleted!");
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
     }
 
     const showDetailsWindow = () => { console.log('zyje'); setIsVisible(true); }
