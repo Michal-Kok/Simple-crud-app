@@ -21,6 +21,7 @@
     background-color: $black;
     border-radius: 40px;
     padding: 15px;
+    z-index: 1;
 
     &__title {
         margin-bottom: 40px;
@@ -34,6 +35,43 @@
 
         span {
             font-weight: bold;
+        }
+    }
+
+    &__button {
+        font-size: 18px;
+        @include button(10px, 25px);
+        margin-top: 40px;
+    }
+
+    &__form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+
+        input {
+            background-color: transparent;
+            padding: 18px 5px 5px 5px;
+            border: none;
+            border-bottom: 2px solid $white;
+            color: $lightGrey;
+            font-weight: bold;
+            outline: none;
+            // margin-bottom: 20px;
+        }
+
+        input:focus {
+            background-color: $darkColor;
+        }
+
+        &__statusLabel {
+            margin-top: 20px;
+
+            input {
+                margin-left: 15px;
+            }
         }
     }
 

@@ -30,7 +30,9 @@ const ProductItem = ({ name, product: details }) => {
                 </button>
             </div>
             { isVisible
-                ? (< DetailsWindow details={details} />)
+                ? (< DetailsWindow
+                    details={details}
+                    closeWindow={() => setIsVisible(false)} />)
                 : null}
         </>
     )
