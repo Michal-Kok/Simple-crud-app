@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import db from '../firebase';
 import ProductItem from '../components/ProductItem';
+import '../assets/style/Products.scss';
 
 const Products = () => {
 
@@ -24,8 +25,9 @@ const Products = () => {
                 {products.map(product => {
                     console.log(products)
                     return (<ProductItem
-                        key={product.cmp_name}
-                        productName={product.cmp_name} />)
+                        key={product.id}
+                        name={product.id}
+                        product={product} />)
                 })}
             </div>
         </div>

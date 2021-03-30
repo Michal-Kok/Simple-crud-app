@@ -5,12 +5,23 @@ $darkColor: #212121;
 $black: #121212;
 $green: #1db954;
 
-@mixin button {
-    padding: 10px 20px;
-    border: 3px solid white;
+@mixin button($padH, $padW) {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: $padH $padW;
+    background-color: $green;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
-// media queries most commor values
+// media queries most common values
 
 $small-phone-width: 380px;
 $bigger-phone-width: 600px;

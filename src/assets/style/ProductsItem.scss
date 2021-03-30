@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.productItem {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 2px solid $lightGrey;
+
+    &__name {
+        width: 50%;
+        color: $white;
+        font-size: 18px;
+    }
+
+    &__button {
+        font-size: 12px;
+        margin-left: 20px;
+        @include button(5px, 10px);
+    }
+
+}

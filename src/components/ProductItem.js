@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../assets/style/ProductsItem.scss';
+import DetailsWindow from './DetailsWindow';
 
-const ProductItem = ({ productName }) => {
+const ProductItem = ({ name, product: details }) => {
 
-    // console.log(productName);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleDeleteProduct = () => {
+        console.log('usuwamy');
+    }
+
+    const showDetailsWindow = () => { console.log('zyje'); setIsVisible(true); }
 
     return (
-        <div className="productItem">
-            <p className="productItem__name" >
-                {productName}
-            </p>
-            <button
-                className="productItem__button" >
-                Delete
-           </button>
-            <button
-                className="productItem__button" >
-                Details
-           </button>
-        </div>
+        <>
+            <div className="productItem">
+                <p className="productItem__name" >
+                    {name}
+                </p>
+                <button
+                    className="productItem__button"
+                    onClick={handleDeleteProduct} >
+                    Delete
+                </button>
+                <button
+                    className="productItem__button"
+                    onClick={showDetailsWindow} >
+                    Details
+                </button>
+            </div>
+            { isVisible
+                ? (< DetailsWindow details={details} />)
+                : null}
+        </>
     )
 }
 
