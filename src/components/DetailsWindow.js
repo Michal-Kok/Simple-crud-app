@@ -43,7 +43,7 @@ const DetailsWindow = ({ details, closeWindow }) => {
                                 <input
                                     id="cmp_fund"
                                     name="cmp_fund"
-                                    type="text"
+                                    type="number"
                                     placeholder="Campaign fund..."
                                     onChange={handleInputChange}
                                     value={values.cmp_fund} />

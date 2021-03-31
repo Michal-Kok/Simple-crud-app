@@ -80,9 +80,10 @@
 
         &__error {
             font-size: 12px;
-            margin-top: 20px;
+            margin-top: 10px;
             color: red;
             text-align: center;
+            align-self: center;
         }
 
         &__select {
