@@ -45,4 +45,24 @@
         color: red;
         font-size: 14px;
     }
+
+    &__emeraldValue {
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+
+        span {
+            color: $green;
+            font-weight: bold;
+        }
+    }
+
+    &__emeraldValue--red {
+        text-align: center;
+
+        span {
+            font-weight: bold;
+            color: red;
+        }
+    }
 }

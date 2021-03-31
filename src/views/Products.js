@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import db from '../firebase';
 import ProductItem from '../components/ProductItem';
 import '../assets/style/Products.scss';
+import { countEmerald } from '../helpers/countEmerald';
 
 const defaultCampaignData = {
     bid_amount: 50,
     cmp_fund: 0,
     cmp_name: "still to set",
     keywords: "",
-    radius: 505,
+    radius: 0,
     status: true,
     town: ""
 }
@@ -43,7 +44,6 @@ const Products = () => {
             .catch((error) => {
                 setError(error);
             });
-
     }
 
     useEffect(() => {
@@ -57,6 +57,8 @@ const Products = () => {
 
         return unsubscribe
     }, []);
+
+    const emeraldValue = countEmerald(products);
 
     return (
         <div className="productsContainer">
@@ -87,6 +89,10 @@ const Products = () => {
                 {inputVisibility ? "Cancel" : "Add product"}
             </button>
             {error ? (<p className="productsContainer__error">{error}</p>) : null}
+            <p
+                className={emeraldValue < 0 ? "productsContainer__emeraldValue--red" : "productsContainer__emeraldValue"}>
+                State of Emerald account:  <span>{emeraldValue}</span>
+            </p>
         </div>
     )
 }

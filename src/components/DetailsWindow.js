@@ -58,14 +58,15 @@ const DetailsWindow = ({ details, closeWindow }) => {
                                 </label>
                                 <label htmlFor="town">
                                     <select
+                                        className="detailsWindow__form__select"
                                         name="town" id="town"
                                         onChange={handleInputChange}
                                         value={values.town} >
                                         <option value="town">Select town</option>
-                                        <option value="cracow">Crocow</option>
-                                        <option value="warsaw">Warsaw</option>
-                                        <option value="gdansk">Gdansk</option>
-                                        <option value="wroclaw">Wroclaw</option>
+                                        <option value="Cracow">Cracow</option>
+                                        <option value="Warsaw">Warsaw</option>
+                                        <option value="Gdansk">Gdansk</option>
+                                        <option value="Wroclaw">Wroclaw</option>
                                     </select>
                                 </label>
                                 <input
@@ -92,7 +93,7 @@ const DetailsWindow = ({ details, closeWindow }) => {
                             Important keywords: <span>{keywords}</span>.
                         </p>
                         <p className="detailsWindow__bidAmount">
-                            Minimal bid amount: <span>{bid_amount}</span>.
+                            Bid amount: <span>{bid_amount}</span>.
                         </p>
                         <p className="detailsWindow__fund">
                             Campaign fund: <span>{cmp_fund}</span>.

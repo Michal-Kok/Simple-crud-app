@@ -77,8 +77,21 @@
 
         &__error {
             font-size: 12px;
-            margin-top: 30px;
+            margin-top: 20px;
             color: red;
+            text-align: center;
+        }
+
+        &__select {
+            margin: 10px 0;
+            width: 50%;
+            padding: 7px;
+            color: $darkGrey;
+        }
+
+        &__select:focus {
+            border: none;
+            outline: none;
         }
     }
 
