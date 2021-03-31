@@ -7,4 +7,9 @@
     justify-content: center;
     color: $lightGrey;
     height: 80px;
+
+    @include breakpoint(big_desktop) {
+        height: 110px;
+        font-size: 30px;
+    }
 }

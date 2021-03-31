@@ -19,5 +19,17 @@
             text-decoration: none;
             color: $lightGrey;
         }
+
+        a:hover {
+            color: $white;
+        }
+    }
+
+    @include breakpoint(bigger_tablet) {
+        font-size: 20px;
+    }
+
+    @include breakpoint(big_desktop) {
+        font-size: 25px;
     }
 }

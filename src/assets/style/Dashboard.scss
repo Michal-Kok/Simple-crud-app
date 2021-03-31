@@ -15,11 +15,26 @@
             font-size: 50px;
             margin-bottom: 30px;
         }
+    }
 
-        &__text {
-            align-self: flex-start;
-            font-size: 30px;
-            font-weight: bold;
+    @include breakpoint(small_tablet) {
+
+        &__header {
+
+            &__title {
+                font-size: 70px;
+                text-align: center;
+            }
+        }
+    }
+
+    @include breakpoint(big_desktop) {
+
+        &__header {
+
+            &__title {
+                font-size: 100px;
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ const DetailsWindow = ({ details, closeWindow }) => {
                                     onChange={handleInputChange}
                                     value={values.cmp_fund} />
                                 <label className="detailsWindow__form__statusLabel" htmlFor="status">
-                                    Choose status:
+                                    Choose status: on/off
                                 <input
                                         id="status"
                                         name="status"

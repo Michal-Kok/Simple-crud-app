@@ -24,16 +24,18 @@ const ProductItem = ({ name, product: details }) => {
                 <p className="productItem__name" >
                     {name}
                 </p>
-                <button
-                    className="productItem__button"
-                    onClick={handleDeleteProduct} >
-                    Delete
-                </button>
-                <button
-                    className="productItem__button"
-                    onClick={showDetailsWindow} >
-                    Details
-                </button>
+                <div className="productItem__buttonContainer">
+                    <button
+                        className="productItem__button"
+                        onClick={handleDeleteProduct} >
+                        Delete
+                     </button>
+                    <button
+                        className="productItem__button"
+                        onClick={showDetailsWindow} >
+                        Details
+                    </button>
+                </div>
             </div>
             { isVisible
                 ? (< DetailsWindow

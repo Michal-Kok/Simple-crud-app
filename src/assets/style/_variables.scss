@@ -28,6 +28,7 @@ $bigger-phone-width: 600px;
 $small-tablet-width: 768px;
 $bigger-tablet-width: 1024px;
 $small-desktop-width: 1350px;
+$bigger-desktop-width: 1700px;
 
 // function for faster "media-quering" ;)
 
@@ -39,7 +40,7 @@ $small-desktop-width: 1350px;
     }
 
     @else if $type==phone_portrait {
-        @media only screen and (min-width: #{$bigger-phone-width}) and (orientation: landscape) {
+        @media only screen and (min-width: #{$bigger-phone-width}) and (max-height: #{$bigger-phone-width}) and (orientation: landscape) {
             @content;
         }
     }
@@ -67,6 +68,12 @@ $small-desktop-width: 1350px;
 
     @else if $type==small_desktop {
         @media only screen and (min-width: #{$small-desktop-width}) {
+            @content;
+        }
+    }
+
+    @else if $type==big_desktop {
+        @media only screen and (min-width: #{$bigger-desktop-width}) {
             @content;
         }
     }

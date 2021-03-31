@@ -17,11 +17,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
+    max-width: 500px;
     height: 550px;
     background-color: $black;
     border-radius: 40px;
     padding: 15px;
     z-index: 1;
+    text-align: center;
 
     &__title {
         margin-bottom: 40px;
@@ -32,6 +34,7 @@
 
     p {
         margin-bottom: 25px;
+        text-align: left;
 
         span {
             font-weight: bold;
@@ -92,6 +95,20 @@
         &__select:focus {
             border: none;
             outline: none;
+        }
+    }
+
+    @include breakpoint(phone_portrait) {
+        position: absolute;
+        top: 80%;
+    }
+
+    @include breakpoint(small_tablet) {
+        padding: 25px;
+
+        &__button {
+            margin: 40px auto;
+            width: 40%;
         }
     }
 

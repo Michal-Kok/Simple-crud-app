@@ -8,6 +8,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
+
     }
 
     &__form {
@@ -59,10 +60,19 @@
 
     &__emeraldValue--red {
         text-align: center;
+        color: $white;
 
         span {
             font-weight: bold;
             color: red;
         }
+    }
+
+    @include breakpoint(small_tablet) {
+        padding: 20px 10%;
+    }
+
+    @include breakpoint(big_desktop) {
+        padding: 20px 15%;
     }
 }
