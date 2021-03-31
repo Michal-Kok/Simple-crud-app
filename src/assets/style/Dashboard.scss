@@ -5,6 +5,7 @@
     height: 100%;
     color: $white;
     padding: 15%;
+    overflow: hidden;
 
     &__header {
         display: flex;
@@ -22,7 +23,7 @@
         &__header {
 
             &__title {
-                font-size: 70px;
+                font-size: 60px;
                 text-align: center;
             }
         }

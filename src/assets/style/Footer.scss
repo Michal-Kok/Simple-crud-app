@@ -3,10 +3,22 @@
 .footer {
     background-color: $darkGrey;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: $lightGrey;
     height: 80px;
+    overflow: hidden;
+
+    &__text {
+        font-size: 12px;
+
+    }
+
+    &__svgContainer {
+        height: 50%;
+        width: fit-content;
+    }
 
     @include breakpoint(big_desktop) {
         height: 110px;
